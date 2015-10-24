@@ -67,6 +67,9 @@
       <di><dt>MessageElement</dt><dd>An OMEMO element that contains a chat message. Its &lt;payload&gt;, when decrypted, corresponds to a &lt;message&gt;'s &lt;body&gt;.</dd></di>
       <di><dt>KeyTransportElement</dt><dd>An OMEMO element that does not have a &lt;payload&gt;. It contains a fresh encryption key, which can be used for purposes external to this XEP.</dd></di>
       <di><dt>Bundle</dt><dd>A collection of publicly accessible data that can be used to build a session with a device, namely its public IdentityKey, a signed PreKey with corresponding signature, and a list of (single use) PreKeys.</dd></di>
+      <di><dt>rid</dt><dd>The device id of the intended recipient of the containing &lt;key&gt;</dd></di>
+      <di><dt>sid</dt><dd>The device id of the sender of the containing OMEMO element</dd></di>
+
     </dl>
   </section2>
   <section2 topic='Axolotl-specific' anchor='glossary-axolotl'>

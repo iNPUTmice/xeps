@@ -25,6 +25,16 @@
   <shortname>mds</shortname>
   &inputmice;
   <revision>
+    <version>1.1.0</version>
+    <date>2026-07-19</date>
+    <initials>dg</initials>
+    <remark>
+      <ul>
+        <li>Add security consideration for sender verification of PEP notifications.</li>
+      </ul>
+    </remark>
+  </revision>
+  <revision>
     <version>1.0.1</version>
     <date>2024-11-20</date>
     <initials>egp</initials>
@@ -271,6 +281,7 @@
     <li>Servers that support the server assist feature MUST strip the &lt;displayed/> element in the "urn:xmpp:mds:displayed:0" namespace from the message to avoid the stanza-id being leaked to the recipient of that message.</li>
     <li>Clients MUST NOT put the &lt;displayed/> into a message to trigger server-assisted displayed synchronization unless the server announces the "urn:xmpp:mds:server-assist:0" feature.</li>
     <li>This specification provides a convenient process to synchronize a user’s own devices and informing the third party in one, single message. However letting the third party know is not always desirable, for example when the user has generally opted out of transmitting the displayed status or when a non-contact initiated a chat. In those cases the client MUST use the &xep0060; method instead of server-assist.</li>
+    <li>When parsing incoming PEP notifications, clients MUST verify that the notification message originates from the user’s bare JID. Notifications from third parties might arrive if that third party has configured the access model of their node to be open.</li>
   </ul>
 </section1>
 <section1 topic='Privacy Considerations' anchor='privacy'>
